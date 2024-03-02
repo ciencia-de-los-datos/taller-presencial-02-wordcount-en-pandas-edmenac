@@ -61,7 +61,7 @@ def run(input_directory, output_filename):
     """Call all functions."""
     dataframe = load_input(input_directory)
     dataframe = clean_text(dataframe)
-    dataframe = count_words(dataframe)
+    dataframe = count_words_(dataframe)
     save_output(dataframe, output_filename)
 
 
