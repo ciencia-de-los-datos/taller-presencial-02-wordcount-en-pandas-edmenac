@@ -33,7 +33,6 @@ def count_words(dataframe):
     dataframe = dataframe.copy()
     dataframe["text"] = dataframe["text"].str.split()
     dataframe = dataframe.explode("text")
-    # dataframe = dataframe.groupby("text").size().reset_index(name="count")
     dataframe["count"] = 1
     dataframe = dataframe.groupby("text").agg({"count": "sum"}).reset_index()
     return dataframe
